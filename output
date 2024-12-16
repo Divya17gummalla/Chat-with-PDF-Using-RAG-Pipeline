@@ -1,0 +1,86 @@
+Input Example 1: Query for Specific Information
+PDF Content (Sample on Unemployment Rates):
+Page 2:
+
+Bachelor’s Degree: 4.2% unemployment
+Master’s Degree: 3.0% unemployment
+Doctorate Degree: 2.1% unemployment
+User Query:
+
+"What is the unemployment rate for a Bachelor’s degree?"
+
+Pipeline Process:
+
+Extracted Chunks:
+Text chunk containing "Bachelor’s Degree: 4.2% unemployment".
+Similarity Search:
+Retrieves the chunk containing the relevant information.
+LLM Response:
+Combines the user query with retrieved context to generate the response.
+Output:
+
+"The unemployment rate for a Bachelor’s degree is 4.2%, as mentioned on page 2 of the PDF."
+
+Input Example 2: Tabular Data Request
+PDF Content (Sample Table on Page 6):
+
+Degree	Unemployment Rate	Median Salary
+High School	7.5%	$38,000
+Bachelor’s	4.2%	$65,000
+Master’s	3.0%	$80,000
+User Query:
+
+"Show me the table with unemployment rates and median salaries."
+
+Pipeline Process:
+
+Extracted Chunks:
+Tabular data is converted to structured chunks during ingestion.
+Similarity Search:
+Retrieves the chunk containing the tabular data.
+LLM Response:
+Formats the table as part of the response.
+Output:
+
+"Here’s the requested table from page 6:
+| Degree | Unemployment Rate | Median Salary |
+|------------------|-------------------|---------------|
+| High School | 7.5% | $38,000 |
+| Bachelor’s | 4.2% | $65,000 |
+| Master’s | 3.0% | $80,000 |"
+
+Input Example 3: Comparison Query
+User Query:
+
+"Compare the unemployment rates for Bachelor’s and Master’s degrees."
+
+Pipeline Process:
+
+Extracted Chunks:
+Retrieves chunks with unemployment information for Bachelor’s and Master’s degrees.
+Aggregation:
+Extracts key data points and organizes them.
+LLM Response:
+Creates a comparative response.
+Output:
+
+"Here’s a comparison of unemployment rates:
+
+Bachelor’s Degree: 4.2%
+Master’s Degree: 3.0%
+The unemployment rate for Master’s degree holders is lower than for Bachelor’s degree holders."
+Input Example 4: Contextual Question
+User Query:
+
+"What does the data say about higher education and job security?"
+
+Pipeline Process:
+
+Extracted Chunks:
+Retrieves chunks related to education levels and unemployment rates.
+LLM Response:
+Generates a summarized response using retrieved chunks.
+Output:
+
+"The data indicates that higher education levels are associated with lower unemployment rates. For instance, Bachelor’s degree holders have a 4.2% unemployment rate, while those with a Master’s degree experience a lower rate of 3.0%. This suggests that higher education improves job security."
+
